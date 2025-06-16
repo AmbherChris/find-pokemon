@@ -28,7 +28,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100"
+    onContextMenu={(e) => e.preventDefault()}
+    >
       <main className="container">
         <h1 className="title">
           Search Pokémon
@@ -71,7 +73,7 @@ export default function Home() {
             <div className="infoContainer">
               <h4 className="font-bold">Abilities:</h4>
               {pokemon.abilities.map((index, i) => (
-                <p className="bg-[white] px-2 shadow-md rounded-sm" key={i}>
+                <p className="ability" key={i}>
                   {capitalize(index.ability.name)}
                 </p>
               ))}
